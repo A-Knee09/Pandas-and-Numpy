@@ -49,7 +49,7 @@ The product of rows × columns must equal the total number of elements.
 )
 
 print("Range of numbers from 0-10 with step 2:\n", np.arange(0, 11, 2), "\n")
-print("Vector with 4 rows and 3 columns:\n", np.arange(1, 13).reshape(4, 3), "\n")
+print("Matrix with 4 rows and 3 columns:\n", np.arange(1, 13).reshape(4, 3), "\n")
 
 # -------------------------------
 # Ones, Zeros, Random

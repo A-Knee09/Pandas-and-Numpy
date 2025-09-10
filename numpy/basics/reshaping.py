@@ -2,7 +2,7 @@ import numpy as np
 
 a1 = np.arange(0, 12).reshape((3, 4))
 
-print(f"A1 vector:\n{a1}\n")
+print(f"A1 matrix:\n{a1}\n")
 
 # transpose : Convert the rows to columns and visa versa
 print(f"A1 Transpose\n")

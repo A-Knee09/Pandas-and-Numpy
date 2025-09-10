@@ -11,24 +11,24 @@ print(f"A2\n{a2}\n")
 print(f"A3\n{a3}\n")
 
 
-# Normal iteration in 1D
-print("Iteration of A1 [1D array]")
+# Normal iteration in 1D vector
+print("Iteration of A1 vector")
 for i in a1:
     print(i, end=" ")
 
 print("")
 
-# Iteration for the vector using the above will print rows (each 1D array in the vector)
-print("\nIteration of Vector A2: ")
+# Iteration for the matrix using the above will print rows (each 1D array in the matrix)
+print("\nIteration of Matrix A2: ")
 for i in a2:
     print(f"{i}\n")
 
-# Iteration for a tensor using the above will print each vector
+# Iteration for a tensor using the above will print each matrix
 print("Iteration in Tensor A3")
 for i in a3:
     print(f"{i}\n")
 
-# Iteration using nditer method will convert everything to 1D and print elements indivisually
+# Iteration using nditer method will convert everything to 1D vector and print elements indivisually
 print("Iteration of Tensor A3 using nditer method")
 for i in np.nditer(a3):
     print(i)
