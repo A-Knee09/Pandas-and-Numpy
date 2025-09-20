@@ -42,3 +42,13 @@ csk_wins = ipl[
     (ipl["City"] == "Kolkata") & (ipl["WinningTeam"] == "Chennai Super Kings")
 ].shape[0]
 print(f"Number of matches CSK won in Kolkata : {csk_wins}\n")
+
+# Toss winner is the match winner in percentage. Does winning the toss do anything
+
+wins = (ipl[ipl["TossWinner"] == ipl["WinningTeam"]].shape[0] / ipl.shape[0]) * 100
+print(f"{wins} % of the teams won the toss and the match as well\n")
+
+# Movies with rating higher than 8 and votes>10000
+ratings = movies[(movies["imdb_rating"] > 8) & (movies["imdb_votes"] > 10000)]
+print(f"{ratings[['title_x','imdb_rating','imdb_votes']]}")
+print(f"Number of movies with imdb votes > 10000 and 8+ ratings : {ratings.shape[0]}")
