@@ -50,5 +50,34 @@ print(f"{wins} % of the teams won the toss and the match as well\n")
 
 # Movies with rating higher than 8 and votes>10000
 ratings = movies[(movies["imdb_rating"] > 8) & (movies["imdb_votes"] > 10000)]
-print(f"{ratings[['title_x','imdb_rating','imdb_votes']]}")
-print(f"Number of movies with imdb votes > 10000 and 8+ ratings : {ratings.shape[0]}")
+print(f"{ratings[['title_x','imdb_rating','imdb_votes']]}\n")
+print(f"Number of movies with imdb votes > 10000 and 8+ ratings : {ratings.shape[0]}\n")
+
+# Action movies with rating higher than 7.5
+mask1 = movies["genres"].str.contains("Action")
+mask2 = movies["imdb_rating"] > 7.5
+print(f"{movies[mask1 & mask2]}")
+
+# Write a function that can return the track record of two teams against each other
+
+
+def teams(team1, team2):
+
+    team1_matches = (ipl["Team1"] == team1) | (ipl["Team1"] == team2)
+    team2_matches = (ipl["Team2"] == team1) | (ipl["Team2"] == team2)
+
+    mask = ipl[team1_matches & team2_matches]
+    print(f"{mask[['Season','Team1','Team2','WinningTeam']]}")
+
+    print("\n-------------Summary------------")
+
+    wins = mask["WinningTeam"].value_counts()
+    team1_wins = wins.get(team1, 0)
+    team2_wins = wins.get(team2, 0)  # Team 2 wins else its 0
+
+    print(f"{team1}: {team1_wins} wins")
+    print(f"{team2}: {team2_wins} wins")
+    print(f"Total matches: {len(mask)}")
+
+
+teams("Chennai Super Kings", "Royal Challengers Bangalore")
