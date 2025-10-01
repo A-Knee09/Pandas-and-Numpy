@@ -12,7 +12,6 @@ print(f"Dimension of a1 is: {a1.ndim}")
 print(f"Dimension of a2 is: {a2.ndim}")
 print(f"Dimension of a3 is: {a3.ndim}\n")
 
-
 # shape : Returns the row and column count
 
 print(f"a2: {a2}")
