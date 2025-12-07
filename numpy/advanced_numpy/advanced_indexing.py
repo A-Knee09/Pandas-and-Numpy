@@ -27,3 +27,13 @@ print(f"All numbers greater than 50 and even\n{b[(b>50) & (b%2==0)]}\n")
 
 # We can also use != sign or ~
 print(f"All numbers which are not divisible by 7\n{b[~(b%7==0)]}\n")
+
+x = np.arange(1, 13).reshape(4, 3)
+# print(x)
+# print(x[[1, 2], 1:3])
+# x[0:, 0] = 0
+# print(x)
+# x[0:, 0] = x[:, 1]
+# print(x)
+x[:, [0, 1]] = x[:, [1, 0]]
+print(x)
